@@ -63,6 +63,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
+  lastUserId = 0;
   const defaultRegion = 'USA';
   const defaultUsers = generateFakeData(20, defaultRegion, randomSeed);
   res.render('index', { users: defaultUsers, region: defaultRegion, seed: randomSeed});
